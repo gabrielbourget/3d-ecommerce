@@ -51,6 +51,8 @@ const Customizer = () => {
         state.isFullTexture = true;
         state.isLogoTexture = false;
     }
+
+    setActiveFilterTab((prevState) => ({ ...prevState, [tabName]: !prevState[tabName] }));
   }
 
   const handleDecals = (type, result) => {
@@ -59,7 +61,7 @@ const Customizer = () => {
     state[decalType.stateProperty] = result;
 
     if (!activeFilterTab[decalType.filterTab]) {
-      handleActiveFilterTab(decalType.filterTab)
+      handleActiveFilterTab(decalType.filterTab);
     }
   };
 
@@ -120,8 +122,8 @@ const Customizer = () => {
                     key={tab.name}
                     tab={tab}
                     isFilterTab
-                    isActiveTab=""
-                    handleClick={() => {}}
+                    isActiveTab={activeFilterTab[tab.name]}
+                    handleClick={() => handleActiveFilterTab(tab.name)}
                   />
                 ))
               }

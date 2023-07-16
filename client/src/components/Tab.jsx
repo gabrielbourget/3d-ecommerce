@@ -8,7 +8,7 @@ const Tab = ({ tab, isFilterTab, isActiveTab, handleClick }) => {
   const snapshot = useSnapshot(state);
 
   const activeStyles = (isFilterTab && isActiveTab) ?
-    { backgroundColor: snap.color, opacity: 0.5 } :
+    { backgroundColor: snapshot.color, opacity: 0.4 } :
     { background: "transparent", opacity: 1 };
 
   return (
