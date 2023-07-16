@@ -36,10 +36,30 @@ const Customizer = () => {
           />
         );
       case "aipicker":
-        return <AIPicker />
+        return (
+          <AIPicker
+            prompt={prompt}
+            setPrompt={setPrompt}
+            generatingImg={generatingImg}
+            handleSubmit={handleSubmit}
+          />
+        );
       default: return null;
     }
   };
+
+  const handleSumit = async (type) => {
+    if (!prompt) alert("Please enter a prompt");
+
+    try {
+      
+    } catch (error) {
+      alert(error)
+    } finally {
+      setGeneratingImg(false);
+      setActiveEditorTab("")
+    }
+  }
 
   const handleActiveFilterTab = (tabName) => {
     switch(tabName) {
