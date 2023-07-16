@@ -14,6 +14,8 @@ import ColorPicker from "../components/ColorPicker";
 import CustomButton from "../components/CustomButton";
 import Tab from "../components/Tab";
 
+const { NODE_ENV } = process.env;
+
 const Customizer = () => {
   const snap = useSnapshot(state);
 
@@ -57,7 +59,11 @@ const Customizer = () => {
     try {
       setGeneratingImg(true);
 
-      const response = await fetch('http://localhost:8080/api/v1/dalle', {
+      const fetchURL = (NODE_ENV === "development") ?
+        "http://localhost:8080/api/v1/dalle" :
+        "https://threed-ecommerce-server.onrender.com/api/v1/dalle";
+
+      const response = await fetch(fetchURL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
