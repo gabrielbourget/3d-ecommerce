@@ -8,7 +8,7 @@ const ColorPicker = () => {
   const snapshot = useSnapshot(state);
 
   return (
-    <div classNAme="absolute lef-full ml-3">
+    <div className="absolute left-full ml-3">
       <SketchPicker
         color={snapshot.color}
         disableAlpha
