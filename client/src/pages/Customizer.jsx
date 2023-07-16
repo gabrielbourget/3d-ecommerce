@@ -17,6 +17,8 @@ import Tab from "../components/Tab";
 const Customizer = () => {
   const snapshot = useSnapshot(state);
 
+  
+
   return (
     <AnimatePresence>
       {
