@@ -48,7 +48,7 @@ const Customizer = () => {
     }
   };
 
-  const handleSumit = async (type) => {
+  const handleSubmit = async (type) => {
     if (!prompt) alert("Please enter a prompt");
 
     try {
