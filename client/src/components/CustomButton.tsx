@@ -10,7 +10,7 @@ const CustomButton = ({title, type, customStyles, handleClick }) => {
     if (type === "filled") {
       return {
         backgroundColor: stateSnapshot.color,
-        color: "#000"
+        color: "#FFF"
       }
     }
   }
