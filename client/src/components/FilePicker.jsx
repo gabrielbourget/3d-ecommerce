@@ -33,7 +33,7 @@ const FilePicker = ({file, setFile, readFile }) => {
         />
         <CustomButton
           type="filled"
-          title="Full Texture"
+          title="Full"
           handleClick={() => readFile("full")}
           customStyles="text-xs"
         />
